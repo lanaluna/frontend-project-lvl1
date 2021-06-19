@@ -1,17 +1,18 @@
 // Игра на четность
-import readlineSync from 'readline-sync';
+import { getName, getAnswer } from './cli.js';
 import randomNumber from './randomNumber.js';
 import checkEven from './checkEven.js';
-import cli from './cli.js';
 
-const name = cli(); // поприветствуем игрока
+console.log('Welcome to the Brain Games!');
+
+const name = getName(); // поприветствуем игрока
 
 // функция задает три вопроса
 const threeQuestions = () => {
   for (let i = 0; i < 3; i += 1) {
     const givenNumber = randomNumber(100);
     console.log(`Question: ${givenNumber}`);
-    const answer = readlineSync.question('Your answer: ');
+    const answer = getAnswer();
     const isEven = checkEven(givenNumber);
 
     if (isEven === answer) {

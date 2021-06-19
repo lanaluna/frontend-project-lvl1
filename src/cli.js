@@ -1,8 +1,7 @@
 // Приветствие игрока
 import readlineSync from 'readline-sync';
 
-export default () => {
-  console.log('Welcome to the Brain Games!');
+export const getName = () => {
   console.log('May I have your name?');
 
   // так считываем введеное имя
@@ -12,3 +11,5 @@ export default () => {
 
   return name;
 };
+
+export const getAnswer = () => readlineSync.question('Your answer: ');
