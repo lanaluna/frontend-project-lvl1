@@ -1,6 +1,6 @@
 import randomNumber from './randomNumber.js';
 
-export const giveQuestion = () => {
+export default () => {
   const num1 = randomNumber(100);
   const num2 = randomNumber(100);
   const sign = randomNumber(3);
@@ -23,5 +23,3 @@ export const giveQuestion = () => {
 
   return gameAnswer;
 };
-
-export const isAnswerWrong = (playerAnswer, gameAnswer) => Number(playerAnswer) !== gameAnswer;

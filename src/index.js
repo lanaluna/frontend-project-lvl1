@@ -1,6 +1,8 @@
 import { getName, getAnswer } from './cli.js';
 import showRules from './showRules.js';
-import * as calc from './calcGame.js';
+import calc from './calcGame.js';
+import gcd from './gcdGame.js';
+import isWrongAnswer from './isWrongAnswer.js';
 
 // сама игра
 const gameFlow = (game) => {
@@ -14,16 +16,30 @@ const gameFlow = (game) => {
   // возвращаем в объекте статус игры (прошел или не прошел) и имя
   // если игрок ошибся, то также возвращаем правильный и неправильный ответ
   for (let i = 0; i < 3; i += 1) {
-    const gameAnswer = calc.giveQuestion();
+    let gameAnswer;
+
+    // если это игра калькулатор
+    if (game === 'calc') {
+      gameAnswer = calc();
+    }
+
+    // если это игра наибольший общий делитель
+    if (game === 'gcd') {
+      gameAnswer = gcd();
+    }
+
+    // получаем ответ игрока
     const playerAnswer = getAnswer();
 
-    if (calc.isAnswerWrong(playerAnswer, gameAnswer)) {
+    // проверяем равны ли ответы
+    if (isWrongAnswer(playerAnswer, gameAnswer)) {
       return {
         status: 'fail', playerAnswer, gameAnswer, name,
       };
     }
   }
 
+  // общий возврат для всех игр в случае успеха (потому что он одинаковый: статус и имя, и все)
   return { status: 'success', name };
 };
 
