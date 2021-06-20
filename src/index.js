@@ -2,6 +2,7 @@ import { getName, getAnswer } from './cli.js';
 import showRules from './showRules.js';
 import calc from './calcGame.js';
 import gcd from './gcdGame.js';
+import progression from './progressionGame.js';
 import isWrongAnswer from './isWrongAnswer.js';
 
 // сама игра
@@ -18,14 +19,16 @@ const gameFlow = (game) => {
   for (let i = 0; i < 3; i += 1) {
     let gameAnswer;
 
-    // если это игра калькулатор
-    if (game === 'calc') {
-      gameAnswer = calc();
-    }
-
-    // если это игра наибольший общий делитель
-    if (game === 'gcd') {
-      gameAnswer = gcd();
+    // выбор игры (игра задает вопрос и запоминает ответ)
+    switch (game) {
+      case 'gcd': // если это игра наибольший общий делитель
+        gameAnswer = gcd();
+        break;
+      case 'progression': // если это игра прогрессия
+        gameAnswer = progression();
+        break;
+      default:
+        gameAnswer = calc(); // по умолчанию игра калькулятор
     }
 
     // получаем ответ игрока
