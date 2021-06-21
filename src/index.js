@@ -1,5 +1,6 @@
 import { getName, getAnswer } from './cli.js';
 import showRules from './showRules.js';
+import even from './games/evenGame.js';
 import calc from './games/calcGame.js';
 import gcd from './games/gcdGame.js';
 import progression from './games/progressionGame.js';
@@ -30,6 +31,9 @@ const gameFlow = (game) => {
         break;
       case 'prime': // если это игра простое число
         gameAnswer = prime();
+        break;
+      case 'even': // если это игра на четность
+        gameAnswer = even();
         break;
       default:
         gameAnswer = calc(); // по умолчанию игра калькулятор
