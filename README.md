@@ -11,3 +11,4 @@
 [Запись на asciinema для игры калькулятор](https://asciinema.org/a/a1C2M0guFye6hBYAq7vb0z2pU)<br>
 [Запись на asciinema для игры НОД](https://asciinema.org/a/pkhxTXyW6cXf8qurfoPGlV0TO)<br>
 [Запись на asciinema для игры прогрессия](https://asciinema.org/a/Yl6t6sohR9PaKgsDFrPS2NEfQ)<br>
+[Запись на asciinema для игры простое число](https://asciinema.org/a/KROL1EkRhjLkQ23lpykVYLs9F)<br>
