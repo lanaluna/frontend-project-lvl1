@@ -3,6 +3,7 @@ import showRules from './showRules.js';
 import calc from './calcGame.js';
 import gcd from './gcdGame.js';
 import progression from './progressionGame.js';
+import prime from './primeGame.js';
 import isWrongAnswer from './isWrongAnswer.js';
 
 // сама игра
@@ -27,12 +28,20 @@ const gameFlow = (game) => {
       case 'progression': // если это игра прогрессия
         gameAnswer = progression();
         break;
+      case 'prime': // если это игра простое число
+        gameAnswer = prime();
+        break;
       default:
         gameAnswer = calc(); // по умолчанию игра калькулятор
     }
 
     // получаем ответ игрока
-    const playerAnswer = getAnswer();
+    let playerAnswer = getAnswer();
+
+    // для тех игр, где ответ игрока предполагает число, принудительно переводим ответ в число
+    if (game === 'gcd' || game === 'calc' || game === 'progression') {
+      playerAnswer = Number(playerAnswer);
+    }
 
     // проверяем равны ли ответы
     if (isWrongAnswer(playerAnswer, gameAnswer)) {

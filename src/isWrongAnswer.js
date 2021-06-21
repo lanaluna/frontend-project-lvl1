@@ -1,1 +1,1 @@
-export default (playerAnswer, gameAnswer) => Number(playerAnswer) !== gameAnswer;
+export default (playerAnswer, gameAnswer) => playerAnswer !== gameAnswer;
