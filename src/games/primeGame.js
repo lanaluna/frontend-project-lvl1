@@ -1,4 +1,4 @@
-import randomNumber from './randomNumber.js';
+import randomNumber from '../randomNumber.js';
 
 const checkIsNumberSimple = (num) => {
   if (num === 1) {

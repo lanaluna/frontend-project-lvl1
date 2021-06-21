@@ -1,7 +1,7 @@
 // Игра на четность
-import { getName, getAnswer } from './cli.js';
-import randomNumber from './randomNumber.js';
-import checkEven from './checkEven.js';
+import { getName, getAnswer } from '../cli.js';
+import randomNumber from '../randomNumber.js';
+import checkEven from '../checkEven.js';
 
 console.log('Welcome to the Brain Games!');
 

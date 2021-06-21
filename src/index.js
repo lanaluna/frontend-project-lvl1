@@ -1,9 +1,9 @@
 import { getName, getAnswer } from './cli.js';
 import showRules from './showRules.js';
-import calc from './calcGame.js';
-import gcd from './gcdGame.js';
-import progression from './progressionGame.js';
-import prime from './primeGame.js';
+import calc from './games/calcGame.js';
+import gcd from './games/gcdGame.js';
+import progression from './games/progressionGame.js';
+import prime from './games/primeGame.js';
 import isWrongAnswer from './isWrongAnswer.js';
 
 // сама игра
