@@ -21,7 +21,7 @@ export default () => {
   const shownProgression = [...progression]; // создали копию массива
   shownProgression[posOfHiddenNumber] = '..'; // скрыли число
 
-  console.log(`Question: ${shownProgression}`);
+  console.log(`Question: ${shownProgression.join(' ')}`);
 
   return progression[posOfHiddenNumber]; // возвращаем то число, которое скрыли
 };
